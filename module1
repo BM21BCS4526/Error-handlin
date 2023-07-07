@@ -1,0 +1,23 @@
+pragma solidity  ^0.8.0;
+
+contract ExceptionHandling {
+    function requireExample(uint256 x) public pure returns (uint256) {
+        // The require statement is used to validate conditions and revert if the condition is not met.
+        require(x > 0, "Value must be greater than zero");
+        return x;
+    }
+    
+    function assertExample(uint256 x) public pure returns (uint256) {
+        // The assert statement is used to check for internal errors and revert if the condition is not met.
+        assert(x > 0);
+        return x;
+    }
+    
+    function revertExample(uint256 x) public pure returns (uint256) {
+        // The revert statement is used to revert the transaction and provide a custom error message.
+        if (x == 0) {
+            revert("Value must not be zero");
+        }
+        return x;
+    }
+}
